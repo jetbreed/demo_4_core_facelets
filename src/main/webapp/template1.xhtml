@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Resolves a date to a day of the week" />
+    <meta name="author" content="" />
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"/>    
+    <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+      </style>
+  
+      
+      <!-- Custom styles for this template -->
+      <link href="headers.css" rel="stylesheet"/>
+    <title>Day of Week Resolver</title>
+</h:head>
+<h:body>
+    <div class="container">
+     
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+              <!-- <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg> -->
+              <span class="fs-4">Simple header</span>
+            </a>
+<!--       
+            <ul class="nav nav-pills">
+              <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            </ul> -->
+
+            <h:form>
+                <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <h:commandLink value="Products" action="#{homeController.page1a()}" class="nav-link active"/>
+                </li>
+                <li class="nav-item">
+                    <h:commandLink value="Features" action="#{homeController.page2()}" class="nav-link"/>
+                </li>
+                <li class="nav-item">
+                    <h:commandLink value="Market Place" action="#{homeController.page3()}" class="nav-link"/>
+                </li>
+                <li class="nav-item">
+                    <h:commandLink value="Company" action="#{homeController.page4()}" class="nav-link"/>
+                </li>
+                </ul>
+            </h:form>
+          </header>
+
+        <div class="container-fluid w3-light-grey">
+            <ui:insert name="body"/>
+        </div>
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-12 col-md">
+            <img class="mb-2" src="../assets/brand/bootstrap-logo.svg" alt="" width="24" height="19"/>
+            <small class="d-block mb-3 text-muted">&copy; 2017–2021</small>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Features</h5>
+            <ul class="list-unstyled text-small">
+              <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
+              <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
+              <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
+              <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li>
+              <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
+              <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+              <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
+              <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
+              <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
+              <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+              <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team</a></li>
+              <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+              <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+              <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+</h:body>
+
+</html>

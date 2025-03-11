@@ -1,0 +1,38 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jun 1, 2022, 8:35:15 AM
+    Author     : DecentCode
+*/
+
+.container-fluid {
+  position: relative;
+  font-family: Arial;
+}
+
+.mySlides 
+{
+    display:none;
+}
+
+.text-block {
+  position: absolute;
+  top: 20px;
+  left: 80px;
+  background-color: black;
+  color: white;
+  width:20%;
+  padding-left: 0px;
+  padding-right: 0px;
+  max-width: 1500px; 
+  height: 400px;
+  opacity:70%;
+}
+
+
+.text-block2 h4 {
+    background: #000;
+    opacity:80%;
+}

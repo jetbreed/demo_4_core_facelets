@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:body class="w3-light-grey">    
+        <ui:composition template="BaseTemplate.xhtml">
+            <ui:define name="body">
+                 
+                <div class="w3-content w3-justify w3-text-black"
+                     id="about">
+                    <h2 class="w3-text-black">
+                        Car Registration
+                    </h2>
+                    <hr class="w3-opacity">
+                    </hr>
+                    <div class="row">
+                    <img 
+                       style="
+                       float: left;
+                       padding: 10px;
+                       width:300px;
+                       text-align: center;
+                       " src="images/1.jpg"/>
+                    </div>
+                    
+                    <h:form>
+                        <p>
+                            <label class="w3-blue w3-padding">
+                                First Name:
+                            </label>
+                            <f:ajax event="change" render="nameError">
+                            <h:inputText 
+                                class="w3-input w3-border"
+                                required="true"
+                                id="fName"
+                                value="#{registrationForm.firstName}"
+                                validator="#{registrationForm.validateName}"
+                                requiredMessage="First Name Required"
+                            />
+                            <h:message for="fName" id="nameError"
+                                       style="color:red"/>
+                            </f:ajax>
+                        </p>
+                        <p>
+                            <label class="w3-blue w3-padding">
+                                Last Name:
+                            </label>
+                            <f:ajax event="change" render="nameError1">
+                            <h:inputText class="w3-input w3-border" 
+                                required="true"
+                                id="lName"
+                                value="#{registrationForm.lastName}"
+                                validator="#{registrationForm.validateName}"
+                                requiredMessage="Last Name Required"
+                            />
+                            <h:message for="lName" id="nameError1"
+                                       style="color:red"/>
+                            </f:ajax>
+                        </p>
+                        <p style="margin-top: 55px">
+                            <label style="position: absolute;
+                                   margin-top:-40px" 
+                                   class="w3-blue w3-padding">
+                                Gender:
+                            </label>
+                            <h:selectOneRadio 
+                                class="w3-input w3-border"
+                                value="#{registrationForm.gender}"
+                                id="gender"
+                                required="true" 
+                                requiredMessage="You must select the gender">
+                                <f:selectItem itemValue="m" 
+                                              itemLabel="Male" />
+                                <f:selectItem itemValue="f" 
+                                             itemLabel="Female" />
+                           </h:selectOneRadio>
+                            <h:message for="gender"
+                                       style="color:red"/>
+                        </p>
+                        <p>
+                            <label class="w3-blue w3-padding">
+                                Date of Birth:
+                            </label>
+                            <f:ajax event="change" render="nameErrorDOB">
+                                <h:inputText class="w3-input 
+                                    w3-border" 
+                                    required="true"
+                                    id="DOB"
+                                    requiredMessage="
+                                    Date of Birth is required"
+                                    converterMessage="Enter DOB in MM/DD/YY format" 
+                                    value="#{registrationForm.dateofBirth}"
+                                >
+                                    <f:convertDateTime pattern="MM/dd/yy" type="date"/>
+                                </h:inputText>
+                                <h:message for="DOB" id="nameErrorDOB" style="color:red"/>
+                            </f:ajax>
+                        </p>
+                        <p>
+                            <label class="w3-blue w3-padding">
+                                Phone Number:
+                            </label>
+                            <f:ajax event="change" render="errorPhone">
+                            <h:inputText class="w3-input 
+                                w3-border"
+                                id="phone"
+                                value="#{registrationForm.phoneNumber}"
+                                required="true"
+                                requiredMessage="Phone Number Required"
+                                >
+                                <f:validateRegex pattern="[0-9]{2}-+[0-9]{3}-+[0-9]{8}"/>
+                            </h:inputText>
+                                <h:message for="phone" id="errorPhone" style="color:red"/>
+                            </f:ajax>
+                        </p>
+                        <p>
+                            <label class="w3-blue w3-padding">
+                                Car Name:
+                            </label>
+                            <h:inputText class="w3-input 
+                                w3-border" 
+                                required="true"
+                                id="carName"
+                                value="#{registrationForm.carName}"
+                                validator="#{registrationForm.validateName}"
+                                requiredMessage="Enter CarName"/>
+                            <h:message for="carName" style="color:red"/>
+                        </p>
+                        <p>
+                            <label class="w3-blue w3-padding">
+                                Password:
+                            </label>
+                        <!--<f:ajax event="change" render="error_pass">-->
+                            <h:inputSecret class="w3-input 
+                                         w3-border" 
+                                         required="true"
+                                         id="pass"
+                                         size="12" 
+                                         value="#{registrationForm.password}"
+                                         requiredMessage="Enter Password"
+                                         validatorMessage="Password must be minimum 5 characters long" 
+                                         validator="#{registrationForm.validateFinalPass}"
+                                         >
+                                <f:validateLength minimum="5"/>
+                            </h:inputSecret>
+                            <h:message for="pass" id="error_pass" style="color:red"/>
+                        <!--</f:ajax>-->        
+                        </p>
+                            <p>
+                        
+                        <!--<f:ajax event="change" render="error_cpass">-->
+                            <h:inputSecret class="w3-input 
+                                         w3-border" 
+                                         id="cpass"
+                                         size="12" 
+                                         value="#{registrationForm.confirmPassword}"
+                                         validator="#{registrationForm.validateCPassword}"
+                                         requiredMessage="Confirm Password"
+                                         required="true"/>
+                            <h:message for="cpass" id="error_cpass" style="color:red"/>
+                        <!--</f:ajax>-->
+                        </p>
+                        <p>
+                            <h:commandButton style="
+                                font-weight: bolder"
+                                class="w3-button 
+                                w3-blue w3-padding-large" 
+                                value="Register" 
+                                action="Success">
+                            </h:commandButton>
+
+                            <h:commandButton 
+                                style="float: right; 
+                                font-weight: bolder"
+                                class="w3-button 
+                                w3-blue w3-padding-large" 
+                                value="Reset" 
+                                immediate="true"
+                                action="car_registration">
+                            </h:commandButton>
+                    </p>
+                    </h:form>
+                </div>
+                </ui:define>
+            </ui:composition>
+
+    </h:body>
+</html>

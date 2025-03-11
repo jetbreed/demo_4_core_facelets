@@ -26,16 +26,16 @@ public class HomeController {
         return "about";
     }
 
-    @GetMapping("/contact")
+    @GetMapping("/car_booking")
     public String page3() {
         // Redirect the root URL to the JSF page jetinfo.xhtml
-        return "contact";
+        return "car_booking";
     }
 
-    @GetMapping("/day-of-week")
+    @GetMapping("/car_registration")
     public String page4() {
         // Redirect the root URL to the JSF page jetinfo.xhtml
-        return "resolve-day-of-week";
+        return "car_registration";
     }   
     
 }

@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:body class="w3-light-grey">    
+        <ui:composition template="BaseTemplate.xhtml">
+            <ui:define name="body">
+                <h:form>                    
+                <div class="w3-content w3-justify w3-text-black"
+                     id="about">
+                    <h2 class="w3-text-black">
+                        Car Booking
+                    </h2>
+                    <hr>
+                    </hr>
+                </div>
+                
+                    <div class="row">
+                        <img 
+                        class=""
+                        style="
+                        float: left;
+                        padding: 10px;
+                        width: 300px;
+                        " src="images/10.jpg"/>
+                    </div>
+                <div class="w3-section">
+                    <h:selectOneMenu id="booking"  
+                                     value="#{carBooking.destination}"
+                                     valueChangeListener="#{carBooking.BookingDetails}"
+                                     onchange="this.form.submit()"
+                                     style="width:100%">
+                        <f:selectItem itemValue="" itemLabel="Select Destination"/>
+                        <f:selectItem itemValue="Lagos" itemLabel="Lagos"/>
+                        <f:selectItem itemValue="PortHacourt" itemLabel="PortHacourt"/>
+                        <f:selectItem itemValue="Ibadan" itemLabel="Ibadan"/>
+                        <f:selectItem itemValue="Sokoto" itemLabel="Sokoto"/>
+                        <f:selectItem itemValue="Akwaibom" itemLabel="Akwaibom"/>
+                        <f:selectItem itemValue="Aba" itemLabel="Aba"/>
+                        
+                    </h:selectOneMenu>
+                </div> 
+
+                <table style="float: left; font-size: 17px;
+                       font-weight: bolder" 
+                       class="w3-section"
+                       align="center">
+                    <tr>
+                         <td>
+                             &nbsp;&nbsp;&nbsp;
+                         </td>
+                        <td>
+                            Vehicle Name
+                        </td>
+                        <td>
+                            &nbsp;&nbsp;&nbsp; >>>
+                            &nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <h:outputText id="vehicleName"
+                                          binding="#{carBooking.vehicleName}"/>
+                        </td>
+                    </tr>
+                <tr>
+                         <td>
+                             &nbsp;&nbsp;&nbsp;
+                         </td>
+                        <td>
+                            Vehicle Color
+                        </td>
+                        <td>
+                            &nbsp;&nbsp;&nbsp; >>>
+                            &nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <h:outputText id="vehicleColor"
+                                          binding="#{carBooking.vehicleColor}"/>
+                        </td>
+                </tr>
+                <tr>
+                         <td>
+                             &nbsp;&nbsp;&nbsp;
+                         </td>
+                        <td>
+                            Vehicle Number
+                        </td>
+                        <td>
+                            &nbsp;&nbsp;&nbsp; >>>
+                            &nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <h:outputText id="vehicleNumber"
+                                          binding="#{carBooking.vehicleNumber}"/>
+                        </td>
+                </tr>
+                <tr>
+                         <td>
+                             &nbsp;&nbsp;&nbsp;
+                         </td>
+                        <td>
+                            Departure Time 
+                        </td>
+                        <td>
+                            &nbsp;&nbsp;&nbsp; >>>
+                            &nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <h:outputText id="departureTime"
+                                          binding="#{carBooking.departureTime}"/>
+                        </td>
+                    </tr>
+                <tr>
+                         <td>
+                             &nbsp;&nbsp;&nbsp;
+                         </td>
+                        <td>
+                            Vehicle Capacity 
+                        </td>
+                        <td>
+                            &nbsp;&nbsp;&nbsp; >>>
+                            &nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <h:outputText id="vehicleCapacity"
+                                          binding="#{carBooking.vehicleCapacity}"/>
+                        </td>
+                    </tr>
+                <tr>
+                         <td>
+                             &nbsp;&nbsp;&nbsp;
+                         </td>
+                        <td>
+                            Price 
+                        </td>
+                        <td>
+                            &nbsp;&nbsp;&nbsp; >>>
+                            &nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <h:outputText id="price"
+                                          binding="#{carBooking.price}"/>
+                        </td>
+                    </tr>
+                
+                </table>
+                 <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Accordion Item #1
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Accordion Item #2
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Accordion Item #3
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </h:form>
+        </ui:define>
+    </ui:composition>
+
+    </h:body>
+</html>
+
